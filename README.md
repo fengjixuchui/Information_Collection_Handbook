@@ -14,6 +14,8 @@
 
 在SRC漏洞挖掘或渗透测试中，信息收集占很大一部分，能收集到别人收集不到的资产，就能挖到别人挖不到的洞。
 
+感谢：@cckuailong师傅由此项目整理的SRC资产信息收集聚合网站：http://lovebear.top/info/
+
 Table of Contents
 =================
 
@@ -96,15 +98,17 @@ Table of Contents
         -   [常用扫描工具使用](#常用扫描工具使用)
             -   [nmap](#nmap-1)
             -   [Masscan](#masscan)
+            -   [Masscan+Nmap](#Masscan+Nmap)
+            -   [masnmapscan](#masnmapscan)
             -   [Zmap](#zmap)
             -   [御剑高速TCP端口扫描工具](#御剑高速tcp端口扫描工具)
             -   [御剑高速端口扫描工具](#御剑高速端口扫描工具)
-            -   [masnmapscan](#masnmapscan)
         -   [网络空间引擎搜索](#网络空间引擎搜索-1)
         -   [浏览器插件](#浏览器插件-1)
             -   [Shodan](#shodan)
             -   [TCPIPUTILS](#tcpiputils-1)
             -   [DNSlytics](#dnslytics-2)
+            -   [Fofa-view](#fofa-view)
 -   [指纹识别](#指纹识别)
     -   [第三方平台](#第三方平台)
     -   [工具](#工具)
@@ -122,8 +126,9 @@ Table of Contents
         -   [网站备份文件泄露常见后缀](#网站备份文件泄露常见后缀)
         -   [网站备份文件泄露扫描工具](#网站备份文件泄露扫描工具)
     -   [Google Hacking](#google-hacking)
-        -   [常用GoogleHacking语法](#常用googlehacking语法)
-        -   [其他GoogleHacking语法](#其他googlehacking语法)
+        -   [GoogleHacking常用语法](#googlehacking常用语法)
+        -   [GoogleHacking其他语法](#googlehacking其他语法)
+        -   [GoogleHackingDatabase](#GoogleHackingDatabase)
         -   [GoogleHacking典型用法](#googlehacking典型用法)
     -   [JS获取敏感接口](#js获取敏感接口)
         -   [JSFinder](#jsfinder)
@@ -146,10 +151,18 @@ Table of Contents
     -   [邮箱信息收集](#邮箱信息收集)
         -   [Infoga](#infoga)
         -   [Google Hacking](#google-hacking-2)
--   [历史漏洞&资产](#历史漏洞资产)
-    -   [历史漏洞](#历史漏洞)
+        -   [Online Search Email](#Online-Search-Email)
     -   [历史资产](#历史资产)
-    	-   [wayback](#wayback)
+        -   [wayback](#wayback)
+-   [漏洞公共资源库](#漏洞公共资源库)
+    -   [国内](#国内)
+    -   [国外](#国外)
+-   [社会工程](#社会工程)
+    -   [SheGongKu](#SheGongKu)
+    -   [UserRegistrationInformation](#UserRegistrationInformation)
+    -   [IPInformation](#IPInformation)
+    -   [SomeProjects](#SomeProjects)
+
 
 # 收集域名信息
 
@@ -159,27 +172,16 @@ Table of Contents
 
 Whois 简单来说，就是一个用来查询域名是否已经被注册，以及注册域名的详细信息的数据库（如域名所有人、域名注册商、域名注册日期和过期日期、DNS等）。通过域名Whois服务器查询，可以查询域名归属者联系方式，以及注册和到期时间。
 
-```
-Kali下whois查询 https://www.kali.org/downloads/
-
-域名Whois查询 - 站长之家 http://whois.chinaz.com/
-
-Whois 爱站 http://whois.aizhan.com/
-
-ip138 https://site.ip138.com/
-
-Whois Lookup https://www.whois.net/
-
-ICANN Lookup https://lookup.icann.org/
-
-域名信息查询 - 腾讯云https://whois.cloud.tencent.com/domain?domain=
-
-nicolasbouliane http://nicolasbouliane.com/utils/whois/?url=http://baidu.com
-
-新网 whois信息查询 http://whois.xinnet.com/
-
-IP WHOIS查询 - 站长工具 http://tool.chinaz.com/ipwhois/
-```
+- [Kali下whois查询](https://www.kali.org/downloads/)
+- [域名Whois查询 - 站长之家](http://whois.chinaz.com/)
+- [Whois 爱站](http://whois.aizhan.com/)
+- [ip138 ](https://site.ip138.com/)
+- [Whois Lookup ](https://www.whois.net/)
+- [ICANN Lookup ](https://lookup.icann.org/)
+- [域名信息查询 - 腾讯云](https://whois.cloud.tencent.com/domain?domain=)
+- [nicolasbouliane ](http://nicolasbouliane.com/utils/whois/?url=http://baidu.com)
+- [新网 whois信息查询 ](http://whois.xinnet.com/)
+- [IP WHOIS查询 - 站长工具 ](http://tool.chinaz.com/ipwhois/)
 
 ![](img/1594459-20200119141241842-1090421140.png)
 
@@ -187,27 +189,20 @@ IP WHOIS查询 - 站长工具 http://tool.chinaz.com/ipwhois/
 
 国内网站注册需要向国家有关部门申请备案，防止网站从事非法活动，而国外网站不需要备案2333。
 
-```
-ICP备案查询网 http://www.beianbeian.com/
-
-ICP备案查询 - 站长工具 http://icp.chinaz.com/
-
-SEO综合查询 - 爱站 https://www.aizhan.com/seo/
-
-批量查询 - 站长工具 http://icp.chinaz.com/searchs
-
-工业和信息化部ICP/IP/域名信息备案管理 http://www.beian.miit.gov.cn/publish/query/indexFirst.action
-```
+- [ICP备案查询网](http://www.beianbeian.com/)
+- [ICP备案查询-站长工具](http://icp.chinaz.com/)
+- [SEO综合查询-爱站](https://www.aizhan.com/seo/)
+- [批量查询-站长工具](http://icp.chinaz.com/searchs)
+- [工业和信息化部ICP/IP/域名信息备案管理](http://www.beian.miit.gov.cn/publish/query/indexFirst.action)
+- [美国企业备案查询](https://www.sec.gov/edgar/searchedgar/companysearch.html)
 
 ![](img/1594459-20200119141328662-1538613661.png)
 
 ## 信用信息查询
 
-国家企业信用信息公示系统 http://www.gsxt.gov.cn/index.html
-
-全国企业信息查询 http://company.xizhi.com/
-
-个人信用查询搜索-企业信息查询搜索-统一社会信用代码查询-信用中国 https://www.creditchina.gov.cn/
+- [国家企业信用信息公示系统](http://www.gsxt.gov.cn/index.html)
+- [悉知-全国企业信息查询](http://company.xizhi.com/)
+- [信用中国-个人信用查询搜索-企业信息查询搜索-统一社会信用代码查询](https://www.creditchina.gov.cn/)
 
 ![](img/1594459-20200119141415498-1786131287.png)
 
@@ -217,7 +212,7 @@ SEO综合查询 - 爱站 https://www.aizhan.com/seo/
 
 #### Dnslytics
 
-Dnslytics地址：https://dnslytics.com/
+- Dnslytics地址：https://dnslytics.com/
 
 利用Dnslytics反查IP可以得到如下信息
 
@@ -266,17 +261,17 @@ Whois Information
 
 # 收集相关应用信息
 
-天眼查 https://www.tianyancha.com/
+- [天眼查](https://www.tianyancha.com/)
 
-企查查 https://www.qichacha.com/
+- [企查查](https://www.qichacha.com/)
 
 ## 微信公众号&微博
 
 ### 天眼查
 
-根据前面获取的企业名称可以获取目标企业的微信公众号、微博、备案站点、软件著作权等信息。
+- [天眼查-商业安全工具](https://www.tianyancha.com/)
 
-天眼查-商业安全工具 https://www.tianyancha.com/
+根据前面获取的企业名称可以获取目标企业的微信公众号、微博、备案站点、软件著作权等信息。
 
 ![](img/1594459-20200119141713825-233472966.png)
 
@@ -292,7 +287,7 @@ Whois Information
 
 ### 七麦数据
 
-https://www.qimai.cn/
+- [七麦数据](https://www.qimai.cn/)
 
 通过当前APP查询同开发商应用，得到目标所有APP应用
 
@@ -300,7 +295,7 @@ https://www.qimai.cn/
 
 ### AppStore
 
-https://apps.apple.com/
+- [AppStore](https://apps.apple.com/)
 
 通过当前APP查询同开发商应用，得到目标所有APP应用
 
@@ -316,35 +311,33 @@ https://apps.apple.com/
 
 主要是一些第三方网站和一些博主提供的服务
 
-```
-ip138 https://site.ip138.com/
+- [ip138](https://site.ip138.com/)
 
-站长工具 http://tool.chinaz.com/subdomain/?domain=
+- [站长工具](http://tool.chinaz.com/subdomain/?domain=)
 
-hackertarget https://hackertarget.com/find-dns-host-records/
+- [hackertarget](https://hackertarget.com/find-dns-host-records/)
 
-phpinfo https://phpinfo.me/domain/
+- [phpinfo](https://phpinfo.me/domain/)
 
-t1h2ua https://www.t1h2ua.cn/tools/
+- [t1h2ua](https://www.t1h2ua.cn/tools/)
 
-dnsdumpster https://dnsdumpster.com/
+- [dnsdumpster](https://dnsdumpster.com/)
 
-chinacycc https://d.chinacycc.com/
+- [chinacycc](https://d.chinacycc.com/)
 
-zcjun http://z.zcjun.com/
-```
+- [zcjun](http://z.zcjun.com/)
 
 ### 权重综合查询
 
-爱站 https://www.aizhan.com/seo/
+- [爱站](https://www.aizhan.com/seo/)
 
-站长工具 http://rank.chinaz.com/all/
+- [站长工具](http://rank.chinaz.com/all/)
 
 ![](img/1594459-20200119141832218-1345938531.png)
 
 ### 全国政府网站基本数据库
 
-http://114.55.181.28/databaseInfo/index
+- [Address Link](http://114.55.181.28/databaseInfo/index)
 
 ![](img/1594459-20200119141843251-1646076497.png)
 
@@ -352,13 +345,9 @@ http://114.55.181.28/databaseInfo/index
 
 IP关联域名，大部分网站一个IP多个域名
 
-```
-http://s.tool.chinaz.com/same?s
-
-http://dns.aizhan.com/
-
-https://webscan.cc/
-```
+- [chinaz](http://s.tool.chinaz.com/same?s)
+- [aizhan](http://dns.aizhan.com/)
+- [webscan.cc](https://webscan.cc/)
 
 ## 资产搜索引擎
 
@@ -376,7 +365,7 @@ site:baidu.com
 
 ### FOFA语法查询
 
-https://fofa.so/
+- [fofa.so](https://fofa.so/)
 
 搜索子域名 "domain:xxxxx"
 
@@ -447,11 +436,9 @@ Sublist3r也是一个比较常用的工具， 它能列举多种资源，如在G
 
 ### 在线第三方平台查询
 
-```
-crt.sh: https://crt.sh
-censys: https://censys.io
-myssl：https://myssl.com
-```
+- [crt.sh](https://crt.sh)
+- [censys](https://censys.io)
+- [myssl](https://myssl.com)
 
 ```
 crt:
@@ -504,9 +491,9 @@ Virustotal with apikey
 
 ## DNS历史解析
 
-dnsdb https://www.dnsdb.io
+- [dnsdb](https://www.dnsdb.io)
 
-viewdns https://viewdns.info/
+- [viewdns](https://viewdns.info/)
 
 ## DNS域传送漏洞
 
@@ -709,13 +696,11 @@ C:\Users\Qftm>nslookup www.dfle.com.cn 114.114.114.114
 
 在线网址
 
-```
-Ping检测-站长工具 http://ping.chinaz.com/
+- [Ping检测-站长工具](http://ping.chinaz.com/)
 
-17CE https://www.17ce.com/
+- [17CE](https://www.17ce.com/)
 
-ipip https://tools.ipip.net/newping.php (支持国内、国外)
-```
+- [ipip (支持国内、国外)](https://tools.ipip.net/newping.php)
 
 #### 站长工具
 
@@ -739,7 +724,7 @@ ipip https://tools.ipip.net/newping.php (支持国内、国外)
 
 #### Cdnplanet
 
-cdnplanet https://www.cdnplanet.com/tools/cdnfinder/ （查询可能比较慢）
+- [cdnplanet](https://www.cdnplanet.com/tools/cdnfinder/) （查询可能比较慢）
 
 ![](img/1594459-20200119142452928-266810115.png)
 
@@ -763,11 +748,9 @@ cdnplanet https://www.cdnplanet.com/tools/cdnfinder/ （查询可能比较慢）
 
 国际ping测试站点
 
-```
-ipip https://tools.ipip.net/newping.php
+- [ipip](https://tools.ipip.net/newping.php)
 
-ASM https://asm.ca.com/en/ping.php
-```
+- [ASM](https://asm.ca.com/en/ping.php)
 
 测试站点：`www.yeah.net`
 
@@ -775,7 +758,7 @@ ASM https://asm.ca.com/en/ping.php
 
 #### 国外DNS解析
 
-世界各地DNS服务器地址大全：`http://www.ab173.com/dns/dns_world.php`
+- [世界各地DNS服务器地址大全](http://www.ab173.com/dns/dns_world.php)
 
 测试站点：`www.yeah.net`
 
@@ -789,7 +772,7 @@ ASM https://asm.ca.com/en/ping.php
 
 #### 分站域名
 
-具体见上面**<收集子域名信息>**部分
+具体见上面 **<收集子域名信息>** 部分
 
 ![](img/1594459-20200119142552726-920748840.png)
 
@@ -841,17 +824,15 @@ phpinfo、test等
 
 在线网站查询
 
-```
-dnsdb https://www.dnsdb.io
+- [dnsdb](https://www.dnsdb.io)
 
-NETCRAFT https://sitereport.netcraft.com/?url=
+- [NETCRAFT](https://sitereport.netcraft.com/?url=)
 
-viewdns https://viewdns.info/
+- [viewdns](https://viewdns.info/)
 
-threatbook https://x.threatbook.cn/
+- [threatbook](https://x.threatbook.cn/)
 
-securitytrails https://securitytrails.com/
-```
+- [securitytrails](https://securitytrails.com/)
 
 ![](img/1594459-20200119142656200-2052041466.png)
 
@@ -925,7 +906,9 @@ shodan、FOFA、zoomeye
 ```
 Nmap  
 
-Masscan  
+Masscan
+
+masnmapscan
 
 ZMap  
 
@@ -936,13 +919,11 @@ ZMap
 IISPutScanner
 
 IISPutScanner增强版-DotNetScan v1.1 Beta
-
-masnmapscan
 ```
 
 ### 常用扫描工具使用
 
-#### nmap
+#### Nmap
 
 项目地址：`https://github.com/nmap/nmap`
 
@@ -1009,6 +990,28 @@ nmap 127.0.0.1 --script=dns-zone-transfer,ftp-anon,ftp-proftpd-backdoor,ftp-vsft
 
 Masscan主要是真对全网进行端口扫描
 
+#### Masscan+Nmap
+
+有些时候网站的入口点属于非常规端口，因此是必须要做全端口扫描，做全端口扫描的时候由于**namp**发包量大经常出现各种问题，如端口扫描不全、获得信息不准等等，为了解决上述问题，这里提供一个**masscan+nmap**结合的方式进行快速扫描。
+
+原理：使用masscan做全端口开放检测，检测出来端口信息后，用nmap进行服务信息识别。
+
+使用：终端输入以下命令执行即可
+
+```
+# masscan 192.33.6.145 -p1-65535  --rate 1000 -oL ports
+
+# ports=$(cat ports | awk -F " " '{print $3}' | sort -n | tr '\n' ','  | sed 's/,$//' | sed 's/^,,//')
+
+# nmap -sV -p $ports 192.33.6.145
+```
+
+#### masnmapscan
+
+项目地址：`https://github.com/hellogoldsnakeman/masnmapscan-V1.0`
+
+masnmapscan整合了masscan和nmap两款扫描器，masscan扫描端口，nmap扫描端口对应服务，二者结合起来实现了又快又好地扫描。并且加入了针对目标资产有防火墙的应对措施。
+
 #### Zmap
 
 项目地址：`https://github.com/zmap/zmap`
@@ -1023,19 +1026,13 @@ Zmap主要是真对全网进行端口扫描
 
 ![](img/1594459-20200119142757545-1040489796.png)
 
-#### masnmapscan
-
-项目地址：`https://github.com/hellogoldsnakeman/masnmapscan-V1.0`
-
-masnmapscan整合了masscan和nmap两款扫描器，masscan扫描端口，nmap扫描端口对应服务，二者结合起来实现了又快又好地扫描。并且加入了针对目标资产有防火墙的应对措施。
-
 ### 网络空间引擎搜索
 
 shodan、FOFA、zoomeye
 
 FOFA为例
 
-https://fofa.so/
+- [fofa.so](https://fofa.so/)
 
 ![](img/1594459-20200119142808985-1292014262.png)
 
@@ -1055,6 +1052,10 @@ https://fofa.so/
 
 ![](img/1594459-20200119142839382-1486144346.png)
 
+#### fofa-view
+
+![](img/1594459-20200119162240355-550566949.png)
+
 # 指纹识别
 
 在漏洞挖掘中，对目标服务器进行指纹识别是相当有必要的，因为只有识别出相应的Web容器或者CMS，才能查找与其相关的漏洞，然后才能进行相应的渗透操作。
@@ -1063,13 +1064,13 @@ CMS (Content Management System)又称整站系统或文章系统。常见的CMS�
 
 ## 第三方平台
 
-云悉 http://www.yunsee.cn/
+- [云悉](http://www.yunsee.cn/)
 
-TideFinger http://finger.tidesec.net/
+- [TideFinger](http://finger.tidesec.net/)
 
-BugScaner http://whatweb.bugscaner.com/look/
+- [BugScaner](http://whatweb.bugscaner.com/look/)
 
-数字观星 https://fp.shuziguanxing.com/#/
+- [数字观星](https://fp.shuziguanxing.com/#/)
 
 ![](img/1594459-20200119142854987-277705405.png)
 
@@ -1081,17 +1082,15 @@ BugScaner http://whatweb.bugscaner.com/look/
 
 Github项目
 
-```
-[CMSeeK](https://github.com/Tuhinshubhra/CMSeeK)
+- [CMSeeK](https://github.com/Tuhinshubhra/CMSeeK)
 
-[CMSmap](https://github.com/Dionach/CMSmap)
+- [CMSmap](https://github.com/Dionach/CMSmap)
 
-[ACMSDiscovery](https://github.com/aedoo/ACMSDiscovery)
+- [ACMSDiscovery](https://github.com/aedoo/ACMSDiscovery)
 
-[TideFinger](https://github.com/TideSec/TideFinger)
+- [TideFinger](https://github.com/TideSec/TideFinger)
 
-[AngelSword](https://github.com/Lucifer1993/AngelSword)
-```
+- [AngelSword](https://github.com/Lucifer1993/AngelSword)
 
 ![](img/1594459-20200119152155149-1636869790.png)
 
@@ -1111,7 +1110,7 @@ Github项目
 
 ### wafw00f
 
-项目地址：https://github.com/EnableSecurity/wafw00f
+- 项目地址：https://github.com/EnableSecurity/wafw00f
 
 ![](img/1594459-20200119142930233-1332790706.png)
 
@@ -1144,11 +1143,11 @@ Robots.txt
 
 ### 源码泄露利用工具
 
-.git源码泄露：https://github.com/lijiejie/GitHack
+- .git源码泄露：https://github.com/lijiejie/GitHack
 
-.DS_Store泄露：https://github.com/lijiejie/ds_store_exp
+- .DS_Store泄露：https://github.com/lijiejie/ds_store_exp
 
-.bzr、CVS、.svn、.hg源码泄露：https://github.com/kost/dvcs-ripper
+- .bzr、CVS、.svn、.hg源码泄露：https://github.com/kost/dvcs-ripper
 
 ## 备份文件泄露
 
@@ -1196,7 +1195,7 @@ ihoneyBakFileScan v0.2 多进程批量网站备份文件泄露扫描工具，根
 
 ## Google Hacking
 
-### 常用GoogleHacking语法
+### GoogleHacking常用语法
 
 1、intext：（仅针对Google有效）
 把网页中的正文内容中的某个字符作为搜索的条件
@@ -1216,7 +1215,7 @@ ihoneyBakFileScan v0.2 多进程批量网站备份文件泄露扫描工具，根
 6、site：
 在指定的(域名)站点搜索相关内容
 
-### 其他GoogleHacking语法
+### GoogleHacking其他语法
 
 1、引号 '' "
 把关键字打上引号后，把引号部分作为整体来搜索
@@ -1229,6 +1228,10 @@ ihoneyBakFileScan v0.2 多进程批量网站备份文件泄露扫描工具，根
 
 4、info
 查找指定站点的一些基本信息
+
+### GoogleHackingDatabase
+
+- [google-hacking-database](https://www.exploit-db.com/google-hacking-database)
 
 ### GoogleHacking典型用法
 
@@ -1474,21 +1477,21 @@ GitCafe一个基于代码托管服务打造的技术协作与分享平台
 
 ### 小白盘搜索
 
-地址：https://www.xiaobaipan.com/
+- 地址：https://www.xiaobaipan.com/
 
 ### 大力盘搜索
 
-地址：https://www.dalipan.com/
+- 地址：https://www.dalipan.com/
 
 ### 小不点搜索（微盘）
 
-地址：https://www.xiaoso.net/
+- 地址：https://www.xiaoso.net/
 
 ![](img/1594459-20200324083040.png)
 
 ### 百度网盘爬取开源工具
 
-地址：https://github.com/gudegg/yunSpider
+- 地址：https://github.com/gudegg/yunSpider
 
 ## 网站截图        
 
@@ -1583,37 +1586,17 @@ site:target.com email
 
 ![](img/1594459-20200119161412993-1570311002.png)
 
-# 历史漏洞&资产
+### Online Search Email
 
-很多时候去查看目标的历史漏洞和资产信息，往往能够得到很多有价值的信息。
+通过全球最大的几个数据泄露站点在线查询邮箱信息泄露情况
 
-## 历史漏洞
+```
+https://monitor.firefox.com/
 
-- 乌云漏洞库
+https://haveibeenpwned.com/
 
-平台地址：`https://github.com/hanc00l/wooyun_public`
-
-- Exploit-db
-
-平台地址：`https://www.exploit-db.com/`
-
-- Securityfocus
-
-平台地址：`https://www.securityfocus.com/bid`
-
-- Cxsecurity
-
-平台地址：`https://cxsecurity.com/exploit/`
-
-- 国家信息安全漏洞库
-
-平台地址：`http://www.cnnvd.org.cn/`
-
-- Seebug
-
-平台地址：`https://www.seebug.org/`
-
-等。。。
+https://ghostproject.fr/
+```
 
 ## 历史资产
 
@@ -1626,3 +1609,77 @@ wayback会记录网站版本更迭，可以获取到之前版本的网站，可�
 例如：腾讯2003.09.29的主页
 
 ![](img/1594459-20200324091903.png)
+
+# 漏洞公共资源库
+
+通过前期一定的信息收集搜索是否存在相应的历史版本漏洞
+
+## 国内
+
+- [国家信息安全漏洞库](http://www.cnnvd.org.cn/)
+- [国家信息安全漏洞共享平台](https://www.cnvd.org.cn/)
+- [SeeBug](https://www.seebug.org/?ref=www)
+- [信息安全漏洞门户 VULHUB](http://vulhub.org.cn/view/global)
+- [数字观星](https://poc.shuziguanxing.com/#/)
+- [NSFOCUS绿盟科技](http://www.nsfocus.net/index.php?act=sec_bug)
+- [BugScan--漏洞插件社区](http://www.bugscan.net/source/template/vulns/)
+- [漏洞列表 | 教育行业漏洞报告平台（Beta）](https://src.sjtu.edu.cn/list/)
+- [工控系统行业漏洞库平台](http://ivd.winicssec.com/)
+- [exp库-打造中文最大exploit库](http://www.expku.com/)
+- [乌云漏洞库](https://github.com/hanc00l/wooyun_public)
+
+## 国外
+
+- [Exploit-db](https://www.exploit-db.com/)
+- [ Sploitus | Exploit & Hacktool Search Engine](https://sploitus.com/)
+- [packetstorm](https://packetstormsecurity.org/)
+- [SecurityFocus](https://www.securityfocus.com/bid)
+- [cxsecurity](https://cxsecurity.com/exploit/)
+- [rapid7 Vulnerability & Exploit Database](https://www.rapid7.com/db/)
+- [Most recent entries - CVE-Search](https://cve.circl.lu/)
+- [CVE security vulnerability database. Security vulnerabilities, exploits](https://www.cvedetails.com/)
+- [CVE mitre - Search CVE List](https://cve.mitre.org/cve/search_cve_list.html)
+- [美国官方工控数据库 ICS-CERT Landing | CISA](https://www.us-cert.gov/ics)
+- [路由器漏洞搜索 Routerpwn - One click exploits, generators, tools, news, vulnerabilities, poc](http://www.routerpwn.com/)
+
+# 社会工程
+
+## SheGongKu
+
+You should know：TG、AnWang
+
+```
+https://dehashed.com/
+
+https://aleph.occrp.org/
+
+https://www.blackbookonline.info/
+
+http://pwndb2am4tzkvold.onion/
+
+TG-Robot:@shegongkubot
+```
+
+## UserRegistrationInformation
+
+通过用户的一些信息（Mail、Name、ID、Tel）查询用户注册过哪些应用
+
+- [REG007](https://www.reg007.com/)
+- [检查160个社交网络上的注册情况 Check Usernames - Social Media Username Availability](https://checkusernames.com/)
+- [检查用户名注册情况在500个主流网站上 KnowEm用户名搜索：社交媒体，域名和商标](https://knowem.com/)
+- [检查用户名注册情况，同时检查注册过哪些域名 Namechk | Username, Domain, and Trademark Search | Username Registration](https://namechk.com/)
+
+## IPInformation
+
+通过IP地址获取位置信息
+
+- [IP地址查询chaipip](http://chaipip.com/ip.php)
+- [高精度IP定位](https://www.opengps.cn/Data/IP/LocHighAcc.aspx)
+- [IP查询IPIP.NET](https://www.ipip.net/ip.html)
+- [ip2location](https://www.ip2location.com/demo/)
+- [maxmind](https://www.maxmind.com/en/geoip2-precision-demo)
+
+## SomeProjects
+
+- [social-engineer-toolkit](https://github.com/trustedsec/social-engineer-toolkit)
+

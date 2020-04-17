@@ -96,19 +96,19 @@ Table of Contents
     -   [扫描工具](#扫描工具)
         -   [常用扫描工具](#常用扫描工具)
         -   [常用扫描工具使用](#常用扫描工具使用)
-            -   [nmap](#nmap-1)
+            -   [Nmap](#nmap-1)
             -   [Masscan](#masscan)
-            -   [Masscan+Nmap](#Masscan+Nmap)
+            -   [Masscan+Nmap](#masscannmap)
             -   [masnmapscan](#masnmapscan)
             -   [Zmap](#zmap)
             -   [御剑高速TCP端口扫描工具](#御剑高速tcp端口扫描工具)
             -   [御剑高速端口扫描工具](#御剑高速端口扫描工具)
-        -   [网络空间引擎搜索](#网络空间引擎搜索-1)
-        -   [浏览器插件](#浏览器插件-1)
-            -   [Shodan](#shodan)
-            -   [TCPIPUTILS](#tcpiputils-1)
-            -   [DNSlytics](#dnslytics-2)
-            -   [Fofa-view](#fofa-view)
+    -   [网络空间引擎搜索](#网络空间引擎搜索-1)
+    -   [浏览器插件](#浏览器插件-1)
+        -   [Shodan](#shodan)
+        -   [TCPIPUTILS](#tcpiputils-1)
+        -   [DNSlytics](#dnslytics-2)
+        -   [fofa-view](#fofa-view)
 -   [指纹识别](#指纹识别)
     -   [第三方平台](#第三方平台)
     -   [工具](#工具)
@@ -128,7 +128,7 @@ Table of Contents
     -   [Google Hacking](#google-hacking)
         -   [GoogleHacking常用语法](#googlehacking常用语法)
         -   [GoogleHacking其他语法](#googlehacking其他语法)
-        -   [GoogleHackingDatabase](#GoogleHackingDatabase)
+        -   [GoogleHackingDatabase](#googlehackingdatabase)
         -   [GoogleHacking典型用法](#googlehacking典型用法)
     -   [JS获取敏感接口](#js获取敏感接口)
         -   [JSFinder](#jsfinder)
@@ -141,7 +141,7 @@ Table of Contents
         -   [凌风云搜索](#凌风云搜索)
         -   [小白盘搜索](#小白盘搜索)
         -   [大力盘搜索](#大力盘搜索)
-        -   [小不点搜索（微盘）](#小不点搜索（微盘）)
+        -   [小不点搜索（微盘）](#小不点搜索微盘)
         -   [百度网盘爬取开源工具](#百度网盘爬取开源工具)
     -   [网站截图](#网站截图)
         -   [webscreenshot](#webscreenshot)
@@ -151,18 +151,17 @@ Table of Contents
     -   [邮箱信息收集](#邮箱信息收集)
         -   [Infoga](#infoga)
         -   [Google Hacking](#google-hacking-2)
-        -   [Online Search Email](#Online-Search-Email)
+        -   [Online Search Email](#online-search-email)
     -   [历史资产](#历史资产)
         -   [wayback](#wayback)
 -   [漏洞公共资源库](#漏洞公共资源库)
     -   [国内](#国内)
     -   [国外](#国外)
 -   [社会工程](#社会工程)
-    -   [SheGongKu](#SheGongKu)
-    -   [UserRegistrationInformation](#UserRegistrationInformation)
-    -   [IPInformation](#IPInformation)
-    -   [SomeProjects](#SomeProjects)
-
+    -   [SheGongKu](#shegongku)
+    -   [UserRegistrationInformation](#userregistrationinformation)
+    -   [IPInformation](#ipinformation)
+    -   [SomeProjects](#someprojects)
 
 # 收集域名信息
 
@@ -262,8 +261,9 @@ Whois Information
 # 收集相关应用信息
 
 - [天眼查](https://www.tianyancha.com/)
-
 - [企查查](https://www.qichacha.com/)
+- [七麦数据](https://www.qimai.cn/)
+- [AppStore](https://apps.apple.com/)
 
 ## 微信公众号&微博
 
@@ -1026,7 +1026,7 @@ Zmap主要是真对全网进行端口扫描
 
 ![](img/1594459-20200119142757545-1040489796.png)
 
-### 网络空间引擎搜索
+## 网络空间引擎搜索
 
 shodan、FOFA、zoomeye
 
@@ -1036,23 +1036,23 @@ FOFA为例
 
 ![](img/1594459-20200119142808985-1292014262.png)
 
-### 浏览器插件
+## 浏览器插件
 
 通过Google、FireFox等插件的使用，收集主机端口开放信息
 
-#### Shodan
+### Shodan
 
 ![](img/1594459-20200119142819024-1802418948.png)
 
-#### TCPIPUTILS
+### TCPIPUTILS
 
 ![](img/1594459-20200119142829090-1787287221.png)
 
-#### DNSlytics.
+### DNSlytics
 
 ![](img/1594459-20200119142839382-1486144346.png)
 
-#### fofa-view
+### fofa-view
 
 ![](img/1594459-20200119162240355-550566949.png)
 
@@ -1103,6 +1103,8 @@ Github项目
 ![](img/1594459-20200119142916899-799352136.png)
 
 # 收集敏感信息
+
+对应站点和应用敏感信息收集的越多，后续攻击利用突破口越多。
 
 ## WAF识别
 
@@ -1445,6 +1447,8 @@ GitHub敏感信息泄露一直是企业信息泄露和知识产权泄露的重�
 
 Github泄露扫描系统开发：https://sec.xiaomi.com/article/37
 
+GitHub敏感信息泄露监控：[GSIL](https://github.com/FeeiCN/GSIL)、[Github-Monitor](https://github.com/VKSRC/Github-Monitor)
+
 在GitHub中一般通过搜索网站域名、网站JS路径、网站备案、网站下的技术支持等进行敏感信息查询
 
 ![](img/1594459-20200119162240355-550566948.png)
@@ -1644,6 +1648,8 @@ wayback会记录网站版本更迭，可以获取到之前版本的网站，可�
 
 # 社会工程
 
+> 世界第一黑客凯文·米特尼克在《反欺骗的艺术》中曾提到，人为因素才是安全的软肋。很多企业、公司在信息安全上投入大量的资金，最终导致数据泄露的原因，往往却是发生在人本身。你们可能永远都想象不到，对于黑客们来说，通过一个用户名、一串数字、一串英文代码，社会工程师就可以通过这么几条的线索，通过社工攻击手段，加以筛选、整理，就能把你的所有个人情况信息、家庭状况、兴趣爱好、婚姻状况、你在网上留下的一切痕迹等个人信息全部掌握得一清二楚。虽然这个可能是最不起眼，而且还是最麻烦的方法。一种无需依托任何黑客软件，更注重研究人性弱点的黑客手法正在兴起，这就是社会工程学黑客技术。
+
 ## SheGongKu
 
 You should know：TG、AnWang
@@ -1678,6 +1684,8 @@ TG-Robot:@shegongkubot
 - [IP查询IPIP.NET](https://www.ipip.net/ip.html)
 - [ip2location](https://www.ip2location.com/demo/)
 - [maxmind](https://www.maxmind.com/en/geoip2-precision-demo)
+- [ip138](https://www.ip138.com/)
+- [ip.cn](https://ip.cn/)
 
 ## SomeProjects
 
